@@ -1,17 +1,21 @@
-var crystal = [];
+var crystals = [];
+points = 0;
 
 // assign value to each crystal
-function assignCrystalValues(crystal) {
+function assignCrystalValues(crystals) {
     for (i = 0; i < 4; i++) {
-        rand = Math.floor(Math.random() * 12) + 1;
-        crystal[i] = rand;
+        crystals[i]= {
+            name: "crystal" + "_" + (i + 1).toString(),
+            value: Math.floor(Math.random() * 12) + 1
+        }
+
     }
-    return crystal
+    return crystals
 }
 
 // Generates random number of points (win condition) between 19 and 120
-function pointsRequired() {
-    points = Math.floor(Math.random() * 120) + 19;
+function pointsRequired(points) {
+    var points = Math.floor(Math.random() * 120) + 19;
     return points
 }
 
@@ -19,8 +23,19 @@ function pointsRequired() {
 function newRound() {
     var round = {
         score: 0,
-        crystals: assignCrystalValues(crystal),
-        points: pointsRequired()
+        crystals: assignCrystalValues(crystals),
+        points: pointsRequired(points)
     }
     return round
 }
+
+// function to handle player guess
+function playerGuess(guess) {
+    for (i = 0; i < 4; i++) {
+        if (guess === crystals[i]) {
+            round.score += crystals[i].value;
+        }
+    }
+    return round.score
+}
+
