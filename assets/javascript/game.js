@@ -36,13 +36,13 @@ function playerGuess(guess, score) {
             score += crystals[i].value;
         }
     }
-    if (hasWon(myGame.round.score, myGame.round.points)) {
-        game.wins += 1;
-        setupGame(game.wins, game.losses)
+    if (hasWon(score, myGame.round.points)) {
+        myGame.wins += 1;
+        myGame = setupGame(myGame.wins, myGame.losses);
     }
-    else if (hasLost(myGame.round.score, myGameround.points)) {
-        game.losses += 1;
-        setupGame(game.wins, game.losses)
+    else if (hasLost(score, myGame.round.points)) {
+        myGame.losses += 1;
+        myGame = setupGame(myGame.wins, myGame.losses);
     }
     return score
 }
