@@ -30,13 +30,21 @@ function newRound() {
 }
 
 // function to handle player guess
-function playerGuess(guess) {
+function playerGuess(guess, score) {
     for (i = 0; i < 4; i++) {
         if (guess === crystals[i]) {
-            round.score += crystals[i].value;
+            score += crystals[i].value;
         }
     }
-    return round.score
+    if (hasWon(myGame.round.score, myGame.round.points)) {
+        game.wins += 1;
+        setupGame(game.wins, game.losses)
+    }
+    else if (hasLost(myGame.round.score, myGameround.points)) {
+        game.losses += 1;
+        setupGame(game.wins, game.losses)
+    }
+    return score
 }
 
 function hasWon(score, points) {
@@ -51,3 +59,13 @@ function hasLost(score, points) {
     }
 }
 
+function setupGame(wins, losses) {
+    var game = {
+        wins: wins,
+        losses: losses,
+        round: newRound()
+    }
+    return game
+}
+
+var myGame = setupGame(0, 0);
