@@ -39,3 +39,15 @@ function playerGuess(guess) {
     return round.score
 }
 
+function hasWon(score, points) {
+    if (score === points) {
+        return true
+    }
+}
+
+function hasLost(score, points) {
+    if (score > points) {
+        return true
+    }
+}
+
