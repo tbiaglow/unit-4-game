@@ -23,15 +23,21 @@
     <div id = "points"></div>
     <div id = "wins"></div>
     <div id = "losses"></div>
-    <div id = "Crystal 1"></div>
-    <div id = "Crystal 2"></div>
-    <div id = "Crystal 3"></div>
-    <div id = "Crystal 4"></div>
-    <div id = "Score"></div>
+    <button id = "Crystal1">Crystal 1</button>
+    <button id = "Crystal2">Crystal 2</button>
+    <button id = "Crystal3">Crystal 3</button>
+    <button id = "Crystal4">Crystal 4</button>
+    <div id = "score"></div>
     <script>
         $(document).ready(function(){
+            $("#points").html("Points to Win: " + myGame.round.points)
             $("#wins").html("Wins: " + myGame.wins);
-            $("#losses").html("Losses: " myGame.losses)
+            $("#losses").html("Losses: " + myGame.losses)
+            $("#score").html("Score: " + myGame.round.score)
+            $("#Crystal1").click(function() {playerGuess(myGame.round.crystals[0], myGame.round.score)})
+            $("#Crystal2").click(function() {playerGuess(myGame.round.crystals[1], myGame.round.score)})
+            $("#Crystal3").click(function() {playerGuess(myGame.round.crystals[2], myGame.round.score)})
+            $("#Crystal4").click(function() {playerGuess(myGame.round.crystals[3], myGame.round.score)})
         });
     </script>
 </body>
