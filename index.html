@@ -6,19 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystals Collector!</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <script type="text/javascript" src="/javascript/game.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 </head>
 
 <body>
     <h1>Crystals Collector!</h1>
-    <p id="gameDescription">
+    <p id = "gameDescription">
         You will be given a random number at the start of the game. <br><br> There are four crystals below. By clicking
         on a crystal you will add a specific amount of points to your total score. <br><br> You win the game by matching
         your total score to a random number, and you lose the game if your total score goes above the random number.
         <br><br> The value of each crystal is hidden from you until you click it. <br><br> Each time the game starts,
         the value of each crystal will change.
     </p>
+    <div id = "points"></div>
+    <div id = "wins"></div>
+    <div id = "losses"></div>
+    <div id = "Crystal 1"></div>
+    <div id = "Crystal 2"></div>
+    <div id = "Crystal 3"></div>
+    <div id = "Crystal 4"></div>
+    <div id = "Score"></div>
+    <script>
+        $(document).ready(function(){
+            $("#wins").html("Wins: " + myGame.wins);
+            $("#losses").html("Losses: " myGame.losses)
+        });
+    </script>
 </body>
 
 </html>
