@@ -35,16 +35,22 @@ function playerGuess(guess, score) {
         if (guess === myGame.round.crystals[i]) {
             myGame.round.score += myGame.round.crystals[i].value;
         }
+    $("#score").html("Score: " + myGame.round.score)
     }
     if (hasWon(myGame.round.score, myGame.round.points)) {
         myGame.wins += 1;
         myGame = setupGame(myGame.wins, myGame.losses);
+        $("#score").html("Score: " + myGame.round.score)
+        $("#wins").html("Wins: " + myGame.wins)
+        $("#points").html("Points to Win: " + myGame.round.points)
     }
     else if (hasLost(myGame.round.score, myGame.round.points)) {
         myGame.losses += 1;
         myGame = setupGame(myGame.wins, myGame.losses);
+        $("#score").html("Score: " + myGame.round.score)
+        $("#losses").html("Losses: " + myGame.losses)
+        $("#points").html("Points to Win: " + myGame.round.points)
     }
-    // return myGame.round.score
 }
 
 function hasWon(score, points) {
