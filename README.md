@@ -1,6 +1,5 @@
 # unit-4-game
 
-The game is crystals collector, homework 4 for coding bootcamp. The game functions exactly as described in the index.html file.
+Crystals Collector is a game where the user must reach a certain number of points (a random number generated at the beginning of each game). Four crystals each contain a random number of points. The user gets points by clicking on each crystal. If the user reaches the required number of points. If they go over the required number, they lose.
 
-I linked this homework to my portfolio:
-https://github.com/tbiaglow/Responsive-Portfolio/blob/master/portfolio.html
+Technologies used: Javascript, Jquery
